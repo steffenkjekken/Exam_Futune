@@ -20,14 +20,12 @@
     <section id="header">
         <header>
             <div class="logo">
+                <img src="images/logo.svg" alt="Futune Logo">
                 <a href="Index.html">
                     <p>FUTUNE</p>
                 </a>
-                <picture>
-                    <source src="#">
-                    <img src="#">
-                </picture>
-                <p>
+
+                <p class="headertext">
                     Futune celebrates More Than The Music—the lyrics, the stories behind the songs, and the creative
                     connections that meaningfully drive culture.
                 </p>
@@ -75,8 +73,10 @@
     <section id="main">
         <div>
             <h2>Albums</h2>
-            <div>
+            <div class="carousel">
+                <div class="album">
 
+                </div>
             </div>
         </div>
         <div>
@@ -122,3 +122,35 @@
 </body>
 
 </html>
+
+<script>
+    const url = "https://gaveklubben.no/exam1/wp-json/wp/v2/posts?_embed";
+    let myData;
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            //console.log('Success:', data);
+            myData = data;
+            listPosts(data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+
+    const result = document.querySelector(".album");
+
+    function listPosts(tasks) {
+        let myList = "";
+        for (let task of tasks) {
+            console.log(task._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url);
+            myList += ` <div class="resultcard">
+            <h2>${task.title.rendered}</h2>
+            <img src="${task._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url}" alt="#">
+            ${task.content.rendered}
+            </div>
+            `
+        }
+        result.innerHTML = myList;
+    }
+
+</script>
