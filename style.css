@@ -69,7 +69,7 @@ a {
 
 .menu {
     display: block;
-    background-color: rgba(48, 8, 151, 0.8);
+    background-color: rgba(0, 0, 0, 0.891);
     width: 100%;
     overflow: hidden;
     height: 0em;
@@ -90,10 +90,14 @@ ul {
     padding: 10px;
     font-size: 1rem;
     font-family: "Manrope", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .menu nav ul a li {
-    border-bottom: 1px solid rgb(135, 135, 135);
+    border-bottom: 1px solid #FFFCF5;
+    text-align: center;
+    color: #FFFCF5;
 }
 
 .mobile>a:nth-child(4)>li {
@@ -207,12 +211,15 @@ h1:nth-child(2) {
 
 footer {
     border-top: 1px solid #000;
+    background-color: rgba(0, 0, 0, 0.891);
+    padding: 10px;
 }
 
 #nav-footer {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1.7fr 1fr;
     padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 #nav-footer nav ul {
@@ -223,17 +230,21 @@ footer {
 #nav-footer nav ul li {
     font-family: "Satoshi";
     font-size: 1.2rem;
-    padding: 0 0 10px 0;
+    padding: 0 0 35px 0;
+    color: #FFFCF5;
 }
 
 #nav-footer>img {
-    width: 92px;
+    width: 145px;
+    filter: invert(100%) sepia(48%) saturate(285%) hue-rotate(1deg) brightness(103%) contrast(105%);
+    padding: 10px;
 }
 
 .socials {
     display: flex;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-bottom: 10px;
     font-size: 1.5em;
+    color: #FFFCF5;
 }
