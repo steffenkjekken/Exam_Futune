@@ -19,7 +19,7 @@
 <body>
     <section id="header">
         <header>
-            <div class="logo">
+            <div class="flex">
                 <img src="images/logo.svg" alt="Futune Logo">
                 <a href="Index.html">
                     <p>FUTUNE</p>
@@ -29,37 +29,39 @@
                     Futune celebrates More Than The Music—the lyrics, the stories behind the songs, and the creative
                     connections that meaningfully drive culture.
                 </p>
-            </div>
-            <div class="menuwrap">
-                <input type="checkbox" class="hamburger-menu">
-                <div class="hamburger">
-                    <div></div>
-                </div>
+                <label for="hamburger-menu">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <input type="checkbox" id="hamburger-menu" onclick="pushDown(this)">
                 <div class="menu">
-                    <div>
-                        <nav>
-                            <ul class="mobile">
-                                <li>
-                                    <a href="index.html">Home</a>
-                                    <a href="allposts.html">Posts</a>
-                                    <a href="about.html">About</a>
-                                    <a href="contact.html">Contact</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+                    <nav>
+                        <ul class="mobile">
+                            <a href="index.html">
+                                <li>Home</li>
+                            </a>
+                            <a href="allposts.html">
+                                <li>Posts</li>
+                            </a>
+                            <a href="about.html">
+                                <li>About</li>
+                            </a>
+                            <a href="contact.html">
+                                <li>Contact</li>
+                            </a>
+                        </ul>
+                    </nav>
                 </div>
+                <nav id=desktop>
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                            <a href="allposts.html">Posts</a>
+                            <a href="about.html">About</a>
+                            <a href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <nav id=desktop>
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                        <a href="allposts.html">Posts</a>
-                        <a href="about.html">About</a>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </nav>
         </header>
     </section>
 
@@ -72,7 +74,7 @@
 
     <section id="main">
         <div>
-            <h2>Albums</h2>
+            <p class="main">Albums</p>
             <div class="carousel">
                 <div class="album">
 
@@ -80,7 +82,7 @@
             </div>
         </div>
         <div>
-            <h2>About</h2>
+            <p class="main">About</p>
             <picture>
                 <source src="#">
                 <img src="#">
@@ -91,31 +93,21 @@
         </div>
     </section>
     <footer>
-        <div>
-            <a href="Index.html">
-                <p>FUTUNE</p>
-            </a>
-        </div>
-        <div class="socials">
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-twitter"></i>
-            <i class="fa-brands fa-instagram"></i>
-
-        </div>
         <div id="nav-footer">
-            <nav id="footer">
+            <nav>
                 <ul>
-                    <li>
-                        <a href="allposts.html">Posts</a>
-                        <a href="about.html">About</a>
-                        <a href="contact.html">Contact</a>
-                    </li>
+                    <li><a href="allposts.html">Posts</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <picture>
-                <source src="#">
-                <img src="#">
-            </picture>
+            <img src="images/logo.svg" alt="Futune Logo">
+        </div>
+        <div class="socials">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
         </div>
     </footer>
 
@@ -124,7 +116,9 @@
 </html>
 
 <script>
-    const url = "https://gaveklubben.no/exam1/wp-json/wp/v2/posts?_embed";
+    document.getElementById("hamburger-menu").checked = false;
+
+    const url = "https://gaveklubben.no/exam1/wp-json/wp/v2/posts?per_page=12&_embed";
     let myData;
     fetch(url)
         .then(response => response.json())
@@ -142,15 +136,30 @@
     function listPosts(tasks) {
         let myList = "";
         for (let task of tasks) {
-            console.log(task._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url);
-            myList += ` <div class="resultcard">
+            //console.log(task);
+            myList += ` <a href="specific.html?id=${task.id}"><div class="resultcard">
             <h2>${task.title.rendered}</h2>
             <img src="${task._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url}" alt="#">
             ${task.content.rendered}
-            </div>
+            </div></a>
             `
         }
         result.innerHTML = myList;
     }
+    function pushDown(e) {
+
+        let body = document.getElementById("hero");
+
+        if (e.checked) {
+            body.setAttribute("class", "pushdown");
+        }
+        else {
+            body.setAttribute("class", " ");
+        }
+
+        console.log("hello");
+    }
+
+
 
 </script>
