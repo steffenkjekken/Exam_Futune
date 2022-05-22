@@ -7,11 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="-" />
     <script src="https://kit.fontawesome.com/6b1d78fca9.js" crossorigin="anonymous"></script>
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Mohave:ital,wght@0,300;0,400;1,300&family=Raleway:wght@400;500;600&display=swap"
-        rel="stylesheet"> -->
     <link href="style.css" rel="stylesheet">
     <title>Futune - Welcome to us</title>
 </head>
@@ -77,18 +72,24 @@
             <p class="main">Albums</p>
             <div class="carousel">
                 <div class="album">
-
+                    <div class="loader"><img src="images/logo.svg" alt="Futune Logo"></div>
                 </div>
             </div>
         </div>
-        <div>
+        <div class="about">
             <p class="main">About</p>
             <picture>
-                <source src="#">
-                <img src="#">
+                <source srcset="images/about_image_mobil.png" media="(max-width: 500px)">
+                <img src="images/about_image.png" alt="Kanye West">
             </picture>
             <div>
-                <p>###</p>
+                <p>
+                    Ye, commonly known as Kanye West, is an American rapper, record producer, entrepreneur, and fashion
+                    designer.
+
+                    He is widely regarded as one of the greatest and most influential hip hop musicians of all
+                    time, as well as one of the greatest musicians of his generation.
+                </p>
             </div>
         </div>
     </section>
@@ -112,54 +113,6 @@
     </footer>
 
 </body>
+<script src="script.js"></script>
 
 </html>
-
-<script>
-    document.getElementById("hamburger-menu").checked = false;
-
-    const url = "https://gaveklubben.no/exam1/wp-json/wp/v2/posts?per_page=12&_embed";
-    let myData;
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            //console.log('Success:', data);
-            myData = data;
-            listPosts(data);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-
-    const result = document.querySelector(".album");
-
-    function listPosts(tasks) {
-        let myList = "";
-        for (let task of tasks) {
-            //console.log(task);
-            myList += ` <a href="specific.html?id=${task.id}"><div class="resultcard">
-            <h2>${task.title.rendered}</h2>
-            <img src="${task._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url}" alt="#">
-            ${task.content.rendered}
-            </div></a>
-            `
-        }
-        result.innerHTML = myList;
-    }
-    function pushDown(e) {
-
-        let body = document.getElementById("hero");
-
-        if (e.checked) {
-            body.setAttribute("class", "pushdown");
-        }
-        else {
-            body.setAttribute("class", " ");
-        }
-
-        console.log("hello");
-    }
-
-
-
-</script>

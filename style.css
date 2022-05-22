@@ -21,13 +21,12 @@ body {
 
 header {
     width: 100%;
-
 }
 
 header p {
     font-family: "Manrope", sans-serif;
     font-weight: 500;
-    font-size: 1.8em;
+    font-size: 6vw;
     letter-spacing: 16px;
     margin: 0%;
     padding-left: 16px;
@@ -73,8 +72,7 @@ a {
     width: 100%;
     overflow: hidden;
     height: 0em;
-    top: 10%;
-
+    top: 5rem;
 }
 
 .mobile {
@@ -121,40 +119,55 @@ label[for=hamburger-menu] {
     display: none;
 }
 
-#hero.pushdown {
-    margin-top: 170px;
+.pushdown {
+    margin-bottom: 11rem;
     transition: margin 0.3s ease;
 }
 
 #hero {
-    height: 300px;
+    display: flex;
+    justify-content: center;
 }
-
-#hero h1 {
-    position: absolute;
-}
-
-
 
 
 h1 {
     font-family: "Manrope";
-    font-size: 90px;
-    line-height: 96%;
+    font-size: 12vw;
+    margin: 0;
+    padding-left: 15px;
 }
 
 h1:nth-child(1) {
     color: black;
     left: 5%;
-    margin-top: 12%;
 }
 
 h1:nth-child(2) {
     color: #FFFCF5;
     text-shadow: 1px 0 0 rgb(58, 58, 58, 0.5), 0 -1px 0 rgb(58, 58, 58, 0.5), 0 1px 0 rgb(58, 58, 58, 0.5), -1px 0 0 rgb(58, 58, 58, 0.5);
     z-index: -1;
-    left: 15%;
 }
+
+#hero>div:nth-child(1) {
+    display: grid;
+    grid-area: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-self: center;
+    padding: 5%;
+}
+
+#hero>div:nth-child(1)>h1:nth-child(1) {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+#hero>div:nth-child(1)>h1:nth-child(2) {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    padding: 20px 0px;
+}
+
 
 .carousel {
     display: block;
@@ -163,20 +176,20 @@ h1:nth-child(2) {
 }
 
 .resultcard {
-    margin: 10px;
+    margin: 1.5vw;
     padding: 15px;
     border: 1px solid #000;
     border-radius: 5%;
     display: flex;
     flex-direction: column-reverse;
-    height: 280px;
+    height: 50vw;
     justify-content: flex-end;
 }
 
 .resultcard h2 {
     margin: 0;
     font-family: "Manrope", sans-serif;
-    font-size: 20px;
+    font-size: 4vw;
     padding-top: 20px;
 }
 
@@ -190,8 +203,8 @@ h1:nth-child(2) {
 
 
 .resultcard>img {
-    width: 190px;
-    height: 190px;
+    width: 30vw;
+    height: 30vw;
     object-fit: cover;
 }
 
@@ -200,19 +213,38 @@ h1:nth-child(2) {
     display: flex;
 }
 
+#main {}
+
 #main p.main {
     font-family: "Satoshi";
     font-style: italic;
     font-weight: bold;
     font-size: 2.6rem;
     margin: 0;
-    padding-left: 15px;
+    padding: 15px;
+}
+
+
+#main .about img {
+    width: -moz-available;
+    filter: grayscale(50%);
+}
+
+.about div p {
+    font-family: "Satoshi";
+    font-size: 16px;
+    font-weight: 400;
+    white-space: pre-line;
+    margin: 0 20px 10px 20px;
+    padding: 15px;
 }
 
 footer {
     border-top: 1px solid #000;
     background-color: rgba(0, 0, 0, 0.891);
     padding: 10px;
+    bottom: 0;
+
 }
 
 #nav-footer {
@@ -247,4 +279,204 @@ footer {
     padding-bottom: 10px;
     font-size: 1.5em;
     color: #FFFCF5;
+}
+
+.imgContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.title h2 {
+    font-family: "Manrope", sans-serif;
+    font-size: 2rem;
+    padding: 10px 0 0 5px;
+}
+
+.resultcontainer {
+    display: grid;
+
+}
+
+.resultcontainer img {
+    width: 250px;
+
+}
+
+.resultcontainer figure {
+    display: inline-flex;
+    flex-direction: column-reverse;
+    width: min-content;
+}
+
+.resultcontainer figure table {
+    display: none;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    padding: 12px 16px;
+    z-index: 1;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.resultcontainer ul {
+    margin: auto;
+    padding: unset;
+    padding-bottom: 15px;
+
+}
+
+.resultcontainer p,
+.resultcontainer li {
+    font-family: "Manrope", sans-serif;
+    font-size: 1em;
+}
+
+.resultcontainer li::first-line {
+    font-weight: 600;
+}
+
+.modal {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 90%;
+    padding: 100px 15px 1000px 15px;
+    left: 0;
+    right: 0;
+    top: 0;
+    overflow: auto;
+    margin: auto;
+}
+
+.modalContent {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+.modalImg {
+    width: 100%;
+}
+
+.close {
+    position: absolute;
+    color: #000;
+    font-size: 8em;
+    color: #444;
+    top: 0;
+    right: 0;
+    margin-right: 15px;
+    background-color: aqua;
+}
+
+#tracklist {
+    margin: auto;
+}
+
+#tracklist table {
+    text-align: end;
+    border-spacing: 0;
+    font-size: 0.8em;
+    font-family: "Satoshi", sans-serif;
+
+}
+
+#tracklist table td {
+    border-bottom: 1px solid black;
+    padding: 5px 0;
+}
+
+#tracklist table tr:last-child td {
+    border-bottom: none;
+}
+
+
+.clickme {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 16rem;
+    border: 1px solid #000;
+    border-radius: 10px;
+    justify-content: space-around;
+    padding: 10px;
+    height: 2rem;
+}
+
+.clickme p {
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.resultcontainer p {
+    padding: 0 15px;
+
+}
+
+.fa-solid {
+    font-size: 2em;
+}
+
+.rotateArrow {
+    transform: rotate(180);
+    transition: 0.3s;
+}
+
+.allPosts .album {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.allPosts .resultcard>img {
+    width: 35vw;
+    height: 35vw;
+    margin: auto;
+}
+
+.allPosts .resultcard {
+    height: 50vw;
+}
+
+.allPosts .resultcard h2 {
+    font-size: 5vw;
+}
+
+.loader {
+    margin: 0 auto;
+    padding: 50px 0;
+    grid-column: 1/3;
+
+}
+
+.loader img {
+    width: 100px;
+    height: 100px;
+    animation: spin 1.2s steps(8, end) infinite;
+}
+
+
+
+@keyframes spin {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+#success {
+    display: none;
+    border: 1px solid black;
+    background: #64b064;
+    color: white;
+    margin-bottom: 10px;
+    width: 350px;
+    text-align: center;
+}
+
+#success.show {
+    display: block;
 }
