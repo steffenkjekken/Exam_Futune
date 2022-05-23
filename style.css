@@ -176,7 +176,7 @@ h1:nth-child(2) {
     margin: 0 -15px 0 -15px;
 }
 
-.resultcard {
+.resultcard a {
     margin: 1.5vw;
     padding: 15px;
     border: 1px solid #000;
@@ -203,7 +203,7 @@ h1:nth-child(2) {
 }
 
 
-.resultcard>img {
+.resultcard img {
     width: 30vw;
     height: 30vw;
     object-fit: cover;
@@ -212,6 +212,10 @@ h1:nth-child(2) {
 .album {
     flex-direction: row;
     display: flex;
+}
+
+.arrows {
+    display: none;
 }
 
 #main {
@@ -567,6 +571,16 @@ footer {
 
 @media (min-width: 779px) {
 
+    *,
+    *::after,
+    *::before {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+    }
+
     header p {
         letter-spacing: normal;
         padding: unset;
@@ -575,6 +589,7 @@ footer {
     .flex {
         display: grid;
         grid-template-columns: 1fr 0.1fr 1fr;
+        grid-template-rows: 1fr 0.5fr;
         height: 115px;
     }
 
@@ -584,10 +599,12 @@ footer {
 
     .flex a {
         grid-area: 1/1;
+        margin-left: 10px;
     }
 
     .flex a>p {
-        letter-spacing: 20px;
+        letter-spacing: 30px;
+        font-size: 6vw;
     }
 
     .headertext {
@@ -608,4 +625,88 @@ footer {
     .menu {
         display: none;
     }
+
+    #desktop {
+        display: block;
+        grid-row: 2;
+        grid-column: 1;
+        margin-top: 10px;
+    }
+
+    #desktop ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    #desktop ul li {
+        border: 1px solid black;
+        border-radius: 20px;
+        padding: 5px 5px;
+        margin-right: 10px;
+        font-family: "Manrope", sans-serif;
+        font-weight: 600;
+        font-size: 1.8vw;
+        width: auto;
+        text-align: center;
+
+    }
+
+    #desktop ul li:hover {
+        border: 1px solid #FFFCF5;
+        color: #f9f9f9;
+        background-color: #000;
+        font-style: italic;
+
+    }
+
+    .carousel {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+    }
+
+    .album {
+        --slider-index: 0;
+        flex-direction: unset;
+        width: 100%;
+        flex-grow: 1;
+        transform: translate(calc(var(--slider-index)* -100%));
+
+    }
+
+    .resultcard {
+        width: 25%;
+        margin: unset;
+        padding: .25rem;
+        display: unset;
+        height: unset;
+    }
+
+    .resultcard img {
+        width: auto;
+    }
+
+    .button {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px 15px;
+    }
+
+    .arrow {
+        margin: 0 15px;
+        border: none;
+        background: none;
+        z-index: 10;
+    }
+
+    .arrow .text {
+        border: 1px solid black;
+        border-radius: 20px;
+        width: 80px;
+        text-align: center;
+        transform: scale(1.5, 1);
+    }
+
 }

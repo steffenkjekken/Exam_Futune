@@ -31,11 +31,68 @@ function listPosts(tasks) {
     let myList = "";
     for (let task of tasks) {
         //console.log(task);
-        myList += ` <a href="specific.html?id=${task.id}"><div class="resultcard">
+        myList += `<div class="resultcard"><a href="specific.html?id=${task.id}">
             <h2>${task.title.rendered}</h2>
             <img src="${task._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url}" alt="#">
-            </div></a>
+            </a></div>
             `
     }
     result.innerHTML = myList;
+}
+
+// function onArrowClick() {
+//     let arrowLeft = document.querySelector(".left-arrow")
+//     let arrowRight = document.querySelector(".right-arrow")
+//     let slider = document.querySelector(".album")
+//     const sliderIndex = parseInt(getComputedStyle(slider).getPropertyValue("--slider-index"))
+
+//     arrowLeft.addEventListener("click", e => {
+//         slider.style.setProperty("--slider-index", sliderIndex - 1)
+//     })
+
+//     arrowRight.addEventListener("click", e => {
+//         slider.style.setProperty("--slider-index", sliderIndex + 1)
+//     })
+// }
+
+
+document.addEventListener("click", e => {
+    let arrow
+    if (e.target.matches(".arrow")) {
+        arrow = e.target
+    }
+    else {
+        arrow = e.target.closest(".arrow")
+    }
+    if (arrow != null) onArrowClick(arrow)
+})
+
+function onArrowClick(arrow) {
+    const slider = arrow.closest(".carousel").querySelector(".album")
+    const sliderIndex = parseInt(getComputedStyle(slider).getPropertyValue("--slider-index"))
+    if (arrow.classList.contains("left-arrow")) {
+        if (sliderIndex - 1 < 0) {
+            slider.style.setProperty("--slider-index", sliderIndex + 3)
+        }
+        else {
+            slider.style.setProperty("--slider-index", sliderIndex - 1)
+        }
+    }
+
+    if (arrow.classList.contains("right-arrow")) {
+
+        if (sliderIndex + 1 >= 4) {
+            slider.style.setProperty("--slider-index", sliderIndex - 3)
+        }
+        else {
+            slider.style.setProperty("--slider-index", sliderIndex + 1)
+        }
+    }
+
+    let postCount = document.querySelector(".pageCount")
+    let album = document.querySelector(".album")
+    let slideNumber = getComputedStyle(album).getPropertyValue("--slider-index")
+
+    postCount.innerHTML = `Showing page ${++slideNumber} of 4 `
+
 }

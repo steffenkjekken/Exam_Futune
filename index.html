@@ -9,6 +9,7 @@
     <script src="https://kit.fontawesome.com/6b1d78fca9.js" crossorigin="anonymous"></script>
     <link href="style.css" rel="stylesheet">
     <title>Futune - Welcome to us</title>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -48,12 +49,18 @@
                 </div>
                 <nav id=desktop>
                     <ul>
-                        <li>
-                            <a href="index.html">Home</a>
-                            <a href="allposts.html">Posts</a>
-                            <a href="about.html">About</a>
-                            <a href="contact.html">Contact</a>
-                        </li>
+                        <a href="index.html">
+                            <li>Home</li>
+                        </a>
+                        <a href="allposts.html">
+                            <li>Posts</li>
+                        </a>
+                        <a href="about.html">
+                            <li>About</li>
+                        </a>
+                        <a href="contact.html">
+                            <li>Contact</li>
+                        </a>
                     </ul>
                 </nav>
             </div>
@@ -73,6 +80,16 @@
             <div class="carousel">
                 <div class="album">
                     <div class="loader"><img src="images/logo.svg" alt="Futune Logo"></div>
+                </div>
+                <div class="button"> <button class="arrow left-arrow">
+                        <div class="text">&#10229;</div>
+                    </button>
+                    <div class="pageCount">
+
+                    </div>
+                    <button class="arrow right-arrow">
+                        <div class="text">&#10230;</div>
+                    </button>
                 </div>
             </div>
         </div>
@@ -113,6 +130,5 @@
     </footer>
 
 </body>
-<script src="script.js"></script>
 
 </html>
