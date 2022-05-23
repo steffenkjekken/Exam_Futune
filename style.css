@@ -482,15 +482,31 @@ footer {
     z-index: 1;
     border: 1px solid black;
     border-radius: 5px;
+    padding: 10px;
 }
 
 #success.show {
     display: block;
 }
 
+#success i {
+    font-size: 4em;
+    color: gold;
+}
+
 #success p {
     font-weight: 600;
-    font-size: 6vw;
+    font-size: 26px;
+    white-space: unset;
+    margin: 10px 0;
+    padding-bottom: 16px;
+}
+
+#success span {
+    font-weight: 400;
+    font-size: 18px;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 #contact {
