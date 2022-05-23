@@ -17,17 +17,17 @@ function validateForm() {
     var name = document.forms.contact.name.value;
     var email = document.forms.contact.email.value
     var subject = document.forms.contact.subject.value;
-    var address = document.forms.contact.address.value;
+    var message = document.forms.contact.message.value;
 
     var nameErrorElement = document.getElementById('nameError');
     var emailErrorElement = document.getElementById('emailError');
     var subjectErrorElement = document.getElementById('subjectError');
-    var addressErrorElement = document.getElementById('addressError');
+    var messageErrorElement = document.getElementById('messageError');
 
     var validName = true;
     var validEmail = true;
     var validSubject = true;
-    var validAddress = true;
+    var validMessage = true;
 
     if (name == "") {
         var noName = "Please fill out name!";
@@ -60,23 +60,31 @@ function validateForm() {
         validSubject = true;
     }
 
-    if (address.length <= 25) {
-        var noAddress = "Address must have a length of minimum 25 characters";
-        addressErrorElement.innerHTML = noAddress;
-        validAddress = false;
+    if (message.length <= 25) {
+        var noMessage = "Message must have a length of minimum 25 characters";
+        messageErrorElement.innerHTML = noMessage;
+        validMessage = false;
     }
 
     else {
-        addressErrorElement.innerHTML = "";
-        validAddress = true;
+        messageErrorElement.innerHTML = "";
+        validMessage = true;
     }
-    if (nameErrorElement.innerHTML === "" && emailErrorElement.innerHTML === "" && subjectErrorElement.innerHTML === "" && addressErrorElement.innerHTML === "") {
+    if (nameErrorElement.innerHTML === "" && emailErrorElement.innerHTML === "" && subjectErrorElement.innerHTML === "" && messageErrorElement.innerHTML === "") {
         var form = document.getElementById('contact')
         var successMessage = document.getElementById('success');
         successMessage.classList.add('show');
-        setTimeout(() => form.submit(), 5000);
+        setTimeout(() => form.submit(), 3000);
 
     }
 
-    return validName && validEmail && validSubject && validAddress;
+    let closeWindow = document.querySelector(".closewindow");
+    let popUp = document.getElementById("success")
+    closeWindow.addEventListener("click", function (e) {
+        popUp.style.display = "none";
+        form.submit();
+    });
+
+
+    return validName && validEmail && validSubject && validMessage;
 }

@@ -111,8 +111,9 @@ ul {
 
 label[for=hamburger-menu] {
     font-size: 2.5em;
-    padding: 5px;
+    padding: 15px;
     grid-column: 3;
+    margin-left: auto;
 }
 
 #desktop {
@@ -134,7 +135,7 @@ h1 {
     font-family: "Manrope";
     font-size: 12vw;
     margin: 0;
-    padding-left: 15px;
+    padding-bottom: 20px;
 }
 
 h1:nth-child(1) {
@@ -165,14 +166,14 @@ h1:nth-child(2) {
 #hero>div:nth-child(1)>h1:nth-child(2) {
     grid-column-start: 1;
     grid-row-start: 1;
-    padding: 20px 0px;
+    padding: 20px 10px;
 }
 
 
 .carousel {
     display: block;
-    width: 100%;
     overflow-x: scroll;
+    margin: 0 -15px 0 -15px;
 }
 
 .resultcard {
@@ -213,7 +214,9 @@ h1:nth-child(2) {
     display: flex;
 }
 
-#main {}
+#main {
+    padding: 5px 15px;
+}
 
 #main p.main {
     font-family: "Satoshi";
@@ -221,7 +224,6 @@ h1:nth-child(2) {
     font-weight: bold;
     font-size: 2.6rem;
     margin: 0;
-    padding: 15px;
 }
 
 
@@ -232,13 +234,13 @@ h1:nth-child(2) {
     filter: grayscale(50%);
 }
 
-.about div p {
+.about div p,
+#main p {
     font-family: "Satoshi";
     font-size: 16px;
     font-weight: 400;
     white-space: pre-line;
-    margin: 0 20px 10px 20px;
-    padding: 15px;
+    padding: 0px 15px;
 }
 
 footer {
@@ -411,11 +413,6 @@ footer {
     font-size: 1.2em;
 }
 
-.resultcontainer p {
-    padding: 0 15px;
-
-}
-
 .fa-solid {
     font-size: 2em;
 }
@@ -471,14 +468,128 @@ footer {
 
 #success {
     display: none;
-    border: 1px solid black;
-    background: #64b064;
-    color: white;
-    margin-bottom: 10px;
-    width: 350px;
+    background: #FFFCF5;
+    color: black;
+    width: 260px;
     text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 230px;
+    z-index: 1;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 #success.show {
     display: block;
+}
+
+#success p {
+    font-weight: 600;
+    font-size: 6vw;
+}
+
+#contact {
+    font-family: "Satoshi", sans-serif;
+    font-size: 4vw;
+    font-weight: bold;
+}
+
+#formContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+}
+
+#formContainer input {
+    border-radius: 5px;
+    border-style: solid;
+    border: 1px solid black;
+    display: block;
+}
+
+#message {
+    width: 100%;
+    height: 200px;
+    font-family: "Satoshi", sans-serif;
+    border: 1px solid black;
+    border-radius: 5px;
+    resize: none;
+
+}
+
+.error {
+    display: inline-block;
+    position: relative;
+    font-size: 3vw;
+    font-style: italic;
+}
+
+#formContainer>input:nth-child(6) {
+    height: 50px;
+    font-size: larger;
+    text-transform: uppercase;
+    font-style: italic;
+    color: #f9f9f9;
+    background-color: #000;
+    cursor: pointer;
+}
+
+#backbutton {
+    background-color: black;
+    width: fit-content;
+    color: white;
+    font-size: larger;
+    border-radius: 5px;
+    padding: 5px 20px;
+}
+
+@media (min-width: 779px) {
+
+    header p {
+        letter-spacing: normal;
+        padding: unset;
+    }
+
+    .flex {
+        display: grid;
+        grid-template-columns: 1fr 0.1fr 1fr;
+        height: 115px;
+    }
+
+    .flex img {
+        grid-column: 2;
+    }
+
+    .flex a {
+        grid-area: 1/1;
+    }
+
+    .flex a>p {
+        letter-spacing: 20px;
+    }
+
+    .headertext {
+        display: block;
+        font-size: small;
+        grid-column: 3;
+        padding: 15px;
+    }
+
+    #hamburger-menu {
+        display: none;
+    }
+
+    label[for=hamburger-menu] {
+        display: none;
+    }
+
+    .menu {
+        display: none;
+    }
 }
