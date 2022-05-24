@@ -42,7 +42,7 @@ function displayPost(data) {
     let titleName = `<h2>${title}</h2>`
 
     let content = `
-    <p>${text}</p>
+    ${text}
     `
 
     resultcontainer.innerHTML = content;

@@ -1,4 +1,3 @@
-
 document.getElementById("hamburger-menu").checked = false;
 
 function pushDown(e) {
@@ -11,7 +10,6 @@ function pushDown(e) {
         header.setAttribute("class", " ");
     }
 }
-
 const url = "https://gaveklubben.no/exam1/wp-json/wp/v2/posts?per_page=14&_embed";
 let myData;
 fetch(url)
@@ -29,32 +27,17 @@ const result = document.querySelector(".album");
 
 function listPosts(tasks) {
     let myList = "";
+
     for (let task of tasks) {
-        //console.log(task);
+        //console.log()
         myList += `<div class="resultcard"><a href="specific.html?id=${task.id}">
             <h2>${task.title.rendered}</h2>
             <img src="${task._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url}" alt="#">
-            </a></div>
-            `
+            </a ></div >
+        `
     }
     result.innerHTML = myList;
 }
-
-// function onArrowClick() {
-//     let arrowLeft = document.querySelector(".left-arrow")
-//     let arrowRight = document.querySelector(".right-arrow")
-//     let slider = document.querySelector(".album")
-//     const sliderIndex = parseInt(getComputedStyle(slider).getPropertyValue("--slider-index"))
-
-//     arrowLeft.addEventListener("click", e => {
-//         slider.style.setProperty("--slider-index", sliderIndex - 1)
-//     })
-
-//     arrowRight.addEventListener("click", e => {
-//         slider.style.setProperty("--slider-index", sliderIndex + 1)
-//     })
-// }
-
 
 document.addEventListener("click", e => {
     let arrow
@@ -88,11 +71,12 @@ function onArrowClick(arrow) {
             slider.style.setProperty("--slider-index", sliderIndex + 1)
         }
     }
-
     let postCount = document.querySelector(".pageCount")
     let album = document.querySelector(".album")
     let slideNumber = getComputedStyle(album).getPropertyValue("--slider-index")
 
-    postCount.innerHTML = `Showing page ${++slideNumber} of 4 `
+    postCount.innerHTML = `Showing page ${++slideNumber} of 4 `;
+
+
 
 }

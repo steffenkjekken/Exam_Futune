@@ -207,6 +207,7 @@ h1:nth-child(2) {
     width: 30vw;
     height: 30vw;
     object-fit: cover;
+    border-radius: 5px;
 }
 
 .album {
@@ -214,7 +215,7 @@ h1:nth-child(2) {
     display: flex;
 }
 
-.arrows {
+.button {
     display: none;
 }
 
@@ -238,11 +239,10 @@ h1:nth-child(2) {
     filter: grayscale(50%);
 }
 
-.about div p,
+.about p,
 #main p {
     font-family: "Satoshi";
     font-size: 16px;
-    font-weight: 400;
     white-space: pre-line;
     padding: 0px 15px;
 }
@@ -569,6 +569,60 @@ footer {
     padding: 5px 20px;
 }
 
+@media (min-width: 545px) {
+
+    .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.5fr 1fr;
+    }
+
+    .about>picture {
+        grid-area: 1/1;
+    }
+
+    .about>p:nth-child(2) {
+        align-self: center;
+        font-weight: bold;
+    }
+
+    .about>p:nth-child(3) {
+        grid-row-start: 1/3;
+        grid-column: 1/3;
+    }
+
+    .resultcontainer {
+        grid-template-columns: 1fr 0.8fr;
+        grid-auto-rows: auto;
+    }
+
+    .imgContainer {
+        display: block;
+    }
+
+    .resultcontainer ul {
+        grid-area: 1/2;
+        margin: unset;
+    }
+
+    #tracklist {
+        grid-area: 1/2;
+        margin: unset;
+    }
+
+    #tracklist table {
+        position: absolute;
+        top: 450px;
+        right: 24px;
+        width: 300px;
+
+    }
+
+    .clickme {
+        width: 12rem;
+    }
+}
+
 @media (min-width: 779px) {
 
     *,
@@ -634,7 +688,7 @@ footer {
     }
 
     #desktop ul {
-        margin: 0;
+        margin: 0 0 0 -70px;
         padding: 0;
         display: flex;
     }
@@ -656,7 +710,6 @@ footer {
         border: 1px solid #FFFCF5;
         color: #f9f9f9;
         background-color: #000;
-        font-style: italic;
 
     }
 
@@ -673,19 +726,31 @@ footer {
         width: 100%;
         flex-grow: 1;
         transform: translate(calc(var(--slider-index)* -100%));
+        transition: transform 250ms ease-in-out;
 
     }
 
     .resultcard {
         width: 25%;
         margin: unset;
-        padding: .25rem;
+        padding: 1vw;
         display: unset;
         height: unset;
     }
 
     .resultcard img {
-        width: auto;
+        width: 20vw;
+        height: 20vw;
+    }
+
+    .resultcard h2 {
+
+        font-size: 3vw;
+    }
+
+    .resultcard a {
+        margin: unset;
+        height: 40vw;
     }
 
     .button {
@@ -699,6 +764,7 @@ footer {
         border: none;
         background: none;
         z-index: 10;
+        cursor: pointer;
     }
 
     .arrow .text {
@@ -707,6 +773,45 @@ footer {
         width: 80px;
         text-align: center;
         transform: scale(1.5, 1);
+        font-size: 22px;
+        font-weight: 900;
     }
+
+    .arrow .text:hover {
+        background-color: #000;
+        color: #FFFCF5;
+    }
+
+    .pageCount {
+        font-family: "Satoshi", sans-serif;
+        font-size: 2.2vw;
+        font-style: italic;
+    }
+
+    .about {
+        margin: 25px 0;
+        grid-area: ;
+        grid-template-columns: 1fr 2fr;
+        display: grid;
+        grid-gap: 10px;
+    }
+
+    .about picture {
+        grid-column-start: 1;
+    }
+
+    .allPosts .album {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .allPosts .resultcard {
+        width: 28vw;
+    }
+
+    .allPosts .resultcard h2 {
+        font-size: 3vw;
+    }
+
+
 
 }
