@@ -67,11 +67,11 @@ function displayPost(data) {
 
     let arrow = document.querySelector(".fa-solid");
 
-    arrow.addEventListener("click", function (e) {
+    trackDiv.addEventListener("click", function (e) {
         if (trackTable.style.display === "block") {
-            arrow.style.transform = "rotate(0deg)";
-        } else {
             arrow.style.transform = "rotate(180deg)";
+        } else {
+            arrow.style.transform = "rotate(0deg)";
             arrow.style.transition = "ease 0.3s"
         }
     });

@@ -75,7 +75,7 @@ function onArrowClick(arrow) {
     let album = document.querySelector(".album")
     let slideNumber = getComputedStyle(album).getPropertyValue("--slider-index")
 
-    postCount.innerHTML = `Showing page ${++slideNumber} of 4 `;
+    postCount.innerHTML = `<p>Showing page ${++slideNumber} of 4 </p>`;
 
 
 

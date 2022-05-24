@@ -221,6 +221,8 @@ h1:nth-child(2) {
 
 #main {
     padding: 5px 15px;
+    max-width: 540px;
+    margin: auto;
 }
 
 #main p.main {
@@ -426,23 +428,43 @@ footer {
     transition: 0.3s;
 }
 
+.allPosts .resultcard a {
+    margin: 1.5vw;
+    padding: 15px;
+    border: 1px solid #000;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 50vw;
+    justify-content: flex-end;
+    max-height: 315px;
+}
+
 .allPosts .album {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    justify-items: center;
+    align-items: center;
+    grid-gap: 10px;
 }
 
-.allPosts .resultcard>img {
-    width: 35vw;
-    height: 35vw;
-    margin: auto;
+.allPosts .resultcard img {
+    width: 32vw;
+    height: 32vw;
+    max-width: 198px;
+    max-height: 198px;
+    margin: 0 auto;
 }
 
 .allPosts .resultcard {
-    height: 50vw;
+    height: fit-content;
+    width: 45vw;
+    max-width: 250px;
 }
 
 .allPosts .resultcard h2 {
-    font-size: 5vw;
+    font-size: 4vw;
 }
 
 .loader {
@@ -495,7 +517,6 @@ footer {
 
 #success i {
     font-size: 4em;
-    color: gold;
 }
 
 #success p {
@@ -571,6 +592,11 @@ footer {
 
 @media (min-width: 545px) {
 
+    #main {
+        max-width: unset;
+        padding: 20px 15px;
+    }
+
     .about {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -593,7 +619,7 @@ footer {
 
     .resultcontainer {
         grid-template-columns: 1fr 0.8fr;
-        grid-auto-rows: auto;
+        grid-auto-flow: rows;
     }
 
     .imgContainer {
@@ -605,14 +631,20 @@ footer {
         margin: unset;
     }
 
+    .resultcontainer p {
+        grid-column: span 2;
+    }
+
     #tracklist {
         grid-area: 1/2;
         margin: unset;
+        padding: 80px 0;
+
     }
 
     #tracklist table {
         position: absolute;
-        top: 450px;
+        top: 390px;
         right: 24px;
         width: 300px;
 
@@ -621,6 +653,27 @@ footer {
     .clickme {
         width: 12rem;
     }
+
+    .allPosts .album {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-columns: auto;
+    }
+
+    .allPosts .album .resultcard img {
+        width: 25vw;
+        height: 25vw;
+    }
+
+    .allPosts .album .resultcard {
+        width: fit-content;
+    }
+
+    .allPosts .album .resultcard a {
+        width: fit-content;
+        margin: unset;
+    }
+
+
 }
 
 @media (min-width: 779px) {
@@ -782,10 +835,11 @@ footer {
         color: #FFFCF5;
     }
 
-    .pageCount {
+    .pageCount p {
         font-family: "Satoshi", sans-serif;
-        font-size: 2.2vw;
+        font-size: 22px;
         font-style: italic;
+        font-weight: 500
     }
 
     .about {
@@ -796,6 +850,7 @@ footer {
         grid-gap: 10px;
     }
 
+
     .about picture {
         grid-column-start: 1;
     }
@@ -804,13 +859,167 @@ footer {
         grid-template-columns: 1fr 1fr 1fr;
     }
 
-    .allPosts .resultcard {
-        width: 28vw;
+    .allPosts .album .resultcard {
+        width: 30vw;
+        max-height: 350px;
+        max-width: 350px;
     }
 
-    .allPosts .resultcard h2 {
-        font-size: 3vw;
+    .allPosts .album .resultcard a {
+        width: auto;
     }
+
+
+    .allPosts .resultcard h2 {
+        font-size: 2.5vw;
+    }
+
+    .resultcontainer {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .resultcontainer p:nth-of-type(3)~p {
+        grid-column: span 3;
+    }
+
+    .resultcontainer img {
+        width: 275px;
+    }
+
+    .resultcontainer ul {
+        align-self: flex-end
+    }
+
+    .resultcontainer figure table {
+        background-color: unset;
+    }
+
+    .title {
+        padding-top: 25px;
+    }
+
+    .title h2 {
+        position: absolute;
+        left: 33%;
+        top: 27%;
+        width: 285px;
+    }
+
+    #tracklist {
+        padding: unset;
+        grid-row: 1/4;
+        grid-column: 3;
+    }
+
+    #tracklist table {
+        display: block;
+        position: relative;
+        top: unset;
+        right: unset;
+        grid-area: 1/3;
+    }
+
+    .clickme {
+        display: none;
+    }
+
+    #contact {
+        font-size: 2.5vw;
+    }
+
+    #formContainer {
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 0.3fr;
+        padding: 50px;
+    }
+
+    #formContainer>div:nth-child(3) {
+        grid-auto-columns: auto;
+        grid-column-start: 1;
+    }
+
+    #formContainer>div:nth-child(4) {
+        grid-column-start: 1;
+    }
+
+    #formContainer>div:nth-child(5) {
+        grid-column-start: 2;
+        grid-row: 1/3;
+    }
+
+    #formContainer>input:nth-child(6) {
+        grid-area: 4/2;
+    }
+
+    .error {
+        font-size: 1.8vw;
+        font-weight: 300;
+    }
+
+    #backbutton {
+        grid-area: 5;
+    }
+
+    #success {
+        width: 100%;
+        text-align: center;
+        position: fixed;
+        margin: unset;
+        top: 0;
+        left: 0;
+        bottom: unset;
+        height: 100%;
+        z-index: 1;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: unset;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    #success p {
+        font-weight: 600;
+        font-size: 26px;
+        white-space: unset;
+        margin: auto;
+        width: 50%;
+        top: 42%;
+        left: 0;
+        right: 0;
+        position: absolute;
+    }
+
+    #success span {
+        font-weight: 400;
+        font-size: 18px;
+        text-decoration: underline;
+        cursor: pointer;
+        display: unset;
+        position: absolute;
+        top: 60%;
+        left: 0;
+        right: 0;
+    }
+
+    #formContainer .fa-solid,
+    .fas {
+        margin-top: 125px;
+    }
+
+    #formContainer .fa-solid {
+        background: #FFFCF5;
+        width: 50%;
+        padding-top: 50px;
+        padding: 15px;
+        border-radius: 10px;
+        height: 50%;
+        border: 1px solid black;
+    }
+
+    #backbutton a {
+        font-size: 22px;
+    }
+
+
 
 
 
