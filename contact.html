@@ -48,28 +48,27 @@
                 </div>
                 <nav id=desktop>
                     <ul>
-                        <a href="index.html">
-                            <li>Home</li>
-                        </a>
-                        <a href="allposts.html">
-                            <li>Posts</li>
-                        </a>
-                        <a href="about.html">
-                            <li>About</li>
-                        </a>
-                        <a href="contact.html">
-                            <li>Contact</li>
-                        </a>
+                        <li>
+                            <a href="index.html">Home </a>
+                        </li>
+                        <li>
+                            <a href="allposts.html">Posts</a>
+                        </li>
+                        <li>
+                            <a href="about.html">About </a>
+                        </li>
+                        <li class="activepage">
+                            <a href="contact.html">Contact</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
         </header>
     </section>
-
+    <h1>Contact Us</h1>
     <section id="main">
-        <div>
-            <h1>Contact Us</h1>
-            <div>
+        <div class="containform">
+            <div class="maxform">
                 <form id="contact" onsubmit="return validateForm()">
                     <div id="formContainer">
                         <div id=success>
@@ -103,7 +102,7 @@
                             <span class="error" id="messageError"></span>
                         </div>
                         <input type="submit" value="Submit">
-                        <p id="backbutton"><a href="Index.html">Back</a></p>
+                        <button id="backbutton"><a href="index.html">Go Back</a></button>
                     </div>
 
                 </form>

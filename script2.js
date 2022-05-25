@@ -47,6 +47,7 @@ function displayPost(data) {
 
     resultcontainer.innerHTML = content;
     albumTitle.innerHTML = titleName;
+    document.title = title;
 
     const trackList = document.getElementById("tracklist");
     let trackDiv = document.createElement("div");
@@ -109,7 +110,7 @@ function addImage(data) {
         let image = document.querySelector(".albumCover");
 
         image.addEventListener("click", function (e) {
-            modal.style.display = "block"
+            modal.style.display = "flex"
             modalImage.src = img.src;
         });
 
