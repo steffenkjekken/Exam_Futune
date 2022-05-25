@@ -84,18 +84,18 @@ ul {
     list-style-type: none;
 }
 
-.mobile li {
-    padding: 10px;
+.mobile li a {
     font-size: 1rem;
     font-family: "Manrope", sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-.menu nav ul a li {
+.menu nav ul li {
     border-bottom: 1px solid #FFFCF5;
     text-align: center;
     color: #FFFCF5;
+    padding: 10px;
 }
 
 .mobile>a:nth-child(4)>li {
@@ -452,8 +452,8 @@ footer {
 }
 
 .allPosts .resultcard img {
-    max-width: 198px;
-    max-height: 198px;
+    max-width: 12rem;
+    max-height: 12rem;
     margin: 0 auto;
 }
 
@@ -662,6 +662,7 @@ footer {
     .allPosts .album {
         grid-template-columns: 1fr 1fr;
         grid-auto-columns: auto;
+        margin: 0 4rem;
     }
 
     .allPosts .album .resultcard {
@@ -710,7 +711,6 @@ footer {
 
     .flex a {
         grid-area: 1/1;
-        margin-left: 10px;
     }
 
     .flex a>p {
@@ -740,7 +740,7 @@ footer {
     #desktop {
         display: block;
         grid-row: 2;
-        grid-column: 1;
+        grid-column: 1/3;
         margin-top: 10px;
     }
 
@@ -753,14 +753,13 @@ footer {
     #desktop ul li {
         border: 1px solid black;
         border-radius: 20px;
-        padding: 5px 5px;
-        margin-right: 10px;
+        padding: 5px 10px;
+        margin-right: 25px;
         font-family: "Manrope", sans-serif;
         font-weight: 600;
         font-size: 1.8vw;
         width: auto;
         text-align: center;
-
     }
 
     #desktop ul li:hover {
@@ -869,6 +868,7 @@ footer {
 
     .allPosts .album {
         grid-template-columns: 1fr 1fr 1fr;
+        margin: unset;
     }
 
     .allPosts .album .resultcard {
@@ -1079,7 +1079,7 @@ footer {
     }
 
     .flex a {
-        margin: unset;
+        padding: 5px 10px;
     }
 
     .flex a p {
@@ -1094,15 +1094,20 @@ footer {
     }
 
     #desktop ul {
-        margin: unset;
+        margin: 0 0 0 -95px;
     }
 
     #desktop ul li {
         margin-right: 50px;
         border-radius: 50px;
-        padding: 5px 15px;
-        font-size: 1.2vw;
+        padding: unset;
+        font-size: 1.4vw;
+        padding: 5px 10px;
+    }
 
+    #desktop li a {
+        padding: unset;
+        margin: unset;
     }
 
     .resultcard a {
@@ -1137,8 +1142,9 @@ footer {
     }
 
     .allPosts .album .resultcard {
-        width: fit-content;
+        width: 15rem;
         max-height: 420px;
+        padding: .5vw;
     }
 
     .allPosts .album .resultcard a {
@@ -1150,7 +1156,7 @@ footer {
     }
 
     .allPosts .album img {
-        width: 22rem;
+        width: 12rem;
     }
 
     .title h2 {
