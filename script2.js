@@ -39,7 +39,7 @@ function displayPost(data) {
     getImageURL(data.featured_media);
 
 
-    let titleName = `<h2>${title}</h2>`
+    let titleName = `<h1>${title}</h1>`
 
     let content = `
     ${text}
@@ -112,6 +112,7 @@ function addImage(data) {
         image.addEventListener("click", function (e) {
             modal.style.display = "flex"
             modalImage.src = img.src;
+            modalImage.alt = slug.replace(/_/g, " ") + " album cover";
         });
 
         let span = document.querySelector(".close");
