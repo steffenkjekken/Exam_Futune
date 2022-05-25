@@ -1116,7 +1116,7 @@ footer {
 
     #nav-footer img {
         justify-items: center;
-        justify-self: center;
+        justify-self: end;
     }
 
     #nav-footer {
@@ -1125,7 +1125,7 @@ footer {
 
     .socials {
         padding-bottom: 10px;
-        padding: 5px 20px;
+        padding: 20px 20px;
     }
 
     #nav-footer>nav:nth-child(1) {
@@ -1304,6 +1304,10 @@ footer {
 
     #nav-footer {
         margin: auto 190px;
+    }
+
+    .socials {
+        padding: 25px 200px;
     }
 
 
