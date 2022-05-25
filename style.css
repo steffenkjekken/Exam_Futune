@@ -47,8 +47,8 @@ a {
 }
 
 .flex>img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     grid-column: 1;
     padding: 5px;
 }
@@ -111,9 +111,8 @@ ul {
 
 label[for=hamburger-menu] {
     font-size: 2.5em;
-    padding: 15px;
     grid-column: 3;
-    margin-left: auto;
+    padding: 5px;
 }
 
 #desktop {
@@ -135,13 +134,14 @@ h1 {
     font-family: "Manrope";
     font-size: 12vw;
     margin: 0;
-    padding: 20px 0;
-    margin-left: 50px;
+    padding: 0 20px;
 }
 
 #hero h1:nth-child(1) {
     color: black;
     left: 5%;
+    padding: 20px 0;
+    margin-left: 50px;
 }
 
 #hero h1:nth-child(2) {
@@ -151,7 +151,7 @@ h1 {
     margin: 0;
     grid-column-start: 1;
     grid-row-start: 1;
-    padding: 30px 40px;
+    padding: 30px 30px;
     font-weight: 600;
 }
 
@@ -456,8 +456,8 @@ footer {
 }
 
 .allPosts .resultcard img {
-    max-width: 12rem;
-    max-height: 12rem;
+    max-width: 30vw;
+    max-height: 30vw;
     margin: 0 auto;
 }
 
@@ -559,12 +559,13 @@ footer {
 }
 
 #message {
-    width: 99%;
+    width: 100%;
     height: 200px;
     font-family: "Satoshi", sans-serif;
     border: 1px solid black;
     border-radius: 5px;
     resize: none;
+    padding: 0;
 
 }
 
@@ -588,9 +589,9 @@ footer {
     background-color: black;
     width: fit-content;
     color: white;
-    font-size: larger;
     border-radius: 5px;
     padding: 5px 20px;
+    margin: 30px 0;
 }
 
 @media (min-width: 545px) {
@@ -713,6 +714,7 @@ footer {
         grid-column: 2;
     }
 
+
     .flex a {
         grid-area: 1/1;
     }
@@ -780,6 +782,19 @@ footer {
 
     #desktop .activepage {
         background-color: yellow;
+    }
+
+    #main .container {
+        margin: auto;
+        width: fit-content;
+    }
+
+    .loader {
+        grid-area: 1/2;
+    }
+
+    .loader img {
+        height: 200px;
     }
 
     .carousel {
@@ -889,6 +904,11 @@ footer {
     .allPosts .album .resultcard a {
         width: auto;
         height: 24rem;
+    }
+
+    .allPosts .album .resultcard img {
+        width: 12rem;
+        height: 12rem;
     }
 
 
@@ -1226,10 +1246,6 @@ footer {
 
     .imgContainer {
         grid-area: 1/1;
-    }
-
-    .resultcontainer {
-        max-width: 1000px;
     }
 
     .resultcontainer ul {
