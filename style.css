@@ -730,11 +730,6 @@ footer {
         font-weight: 300;
     }
 
-    .i {
-        font-style: italic;
-        font-size: inherit;
-    }
-
     #hamburger-menu {
         display: none;
     }
@@ -774,9 +769,13 @@ footer {
 
     #desktop ul li:hover {
         border: 1px solid #FFFCF5;
-        color: #f9f9f9;
+        color: yellow;
         background-color: #000;
 
+    }
+
+    #desktop ul li a:hover {
+        color: yellow;
     }
 
     #desktop .activepage {
