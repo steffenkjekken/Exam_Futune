@@ -46,14 +46,14 @@ a {
     justify-items: center;
 }
 
-.flex>img {
+.flex .headerlogo img {
     width: 50px;
     height: 50px;
     grid-column: 1;
     padding: 5px;
 }
 
-.flex a {
+.flex .futunetext {
     grid-column: 2;
     justify-content: end;
 }
@@ -107,7 +107,6 @@ ul {
     position: absolute;
     transition: height 0.3s ease-in-out;
 }
-
 
 label[for=hamburger-menu] {
     font-size: 2.5em;
@@ -715,16 +714,21 @@ footer {
         height: 115px;
     }
 
-    .flex img {
+    .flex a.headerlogo {
         grid-column: 2;
     }
 
+    .flex .headerlogo img {
+        width: 100px;
+        height: 100px;
+    }
 
-    .flex a {
+
+    .flex a.futunetext {
         grid-area: 1/1;
     }
 
-    .flex a>p {
+    .futunetext p {
         letter-spacing: 30px;
         font-size: 6vw;
     }
@@ -1303,7 +1307,8 @@ footer {
     }
 
     #nav-footer {
-        margin: auto 190px;
+        margin: auto;
+        max-width: 1080px;
     }
 
     .socials {
