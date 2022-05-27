@@ -198,8 +198,9 @@ h1 {
     display: none;
 }
 
-.resultcard p {
-    display: none;
+.resultcard p.year {
+    position: relative;
+    margin-left: -15px;
 }
 
 
@@ -438,11 +439,11 @@ footer {
     margin: 1.5vw;
     border: 1px solid #000;
     border-radius: 5%;
-    display: flex;
-    flex-direction: column-reverse;
+    display: grid;
+    grid-template-rows: 1fr 1fr 0.2fr;
     height: 15rem;
-    justify-content: flex-end;
     max-height: 315px;
+    justify-content: center;
 }
 
 .allPosts .album {
@@ -455,19 +456,25 @@ footer {
 }
 
 .allPosts .resultcard img {
+    grid-area: 1;
     max-width: 30vw;
     max-height: 30vw;
     margin: 0 auto;
 }
 
 .allPosts .resultcard {
-    height: fit-content;
     width: 45vw;
     max-width: 250px;
 }
 
 .allPosts .resultcard h2 {
-    font-size: 4vw;
+    font-size: 18px;
+    grid-area: 2;
+}
+
+.allPosts .resultcard p.year {
+    grid-area: 3;
+    margin: 0 0 0 -15px;
 }
 
 .loader {
@@ -666,12 +673,11 @@ footer {
 
     .allPosts .album {
         grid-template-columns: 1fr 1fr;
-        grid-auto-columns: auto;
         margin: 0 5rem;
     }
 
     .allPosts .resultcard h2 {
-        font-size: 3vw;
+        font-size: 1.5rem;
     }
 
     .allPosts .album .resultcard {
@@ -680,8 +686,13 @@ footer {
 
     .allPosts .album .resultcard a {
         margin: unset;
-        height: 16rem;
+        height: 18rem;
     }
+
+    .resultcard h2 {
+        font-size: 1rem;
+    }
+
 
 
 }
@@ -705,6 +716,10 @@ footer {
     header p {
         letter-spacing: normal;
         padding: unset;
+    }
+
+    #header {
+        padding-bottom: 2rem;
     }
 
     .flex {
@@ -793,13 +808,14 @@ footer {
         background-color: yellow;
     }
 
+
     #main .container {
         margin: auto;
         width: fit-content;
     }
 
     .loader {
-        grid-area: 1/2;
+        grid-column: 1/5;
     }
 
     .loader img {
@@ -841,13 +857,18 @@ footer {
 
     .resultcard a {
         margin: 0 .25rem;
-        height: 16rem;
+        height: 30vw;
         padding: 1rem;
     }
 
     .resultcard img {
         width: auto;
         height: auto;
+    }
+
+    .album.resultcard p.year {
+        position: absolute;
+        bottom: 0;
     }
 
     .button {
@@ -904,15 +925,9 @@ footer {
         margin: unset;
     }
 
-    .allPosts .album .resultcard {
-        width: 30vw;
-        max-height: 350px;
-        max-width: 350px;
-    }
-
     .allPosts .album .resultcard a {
         width: auto;
-        height: 24rem;
+        height: 25rem;
     }
 
     .allPosts .album .resultcard img {
@@ -922,27 +937,27 @@ footer {
 
 
     .allPosts .resultcard h2 {
-        font-size: 2.5vw;
+        font-size: 2vw;
+        padding-top: 10px;
     }
 
     .resultcontainer {
         grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-flow: dense;
     }
 
-    .resultcontainer p:nth-of-type(3)~p {
-        grid-column: span 3;
-    }
 
     .resultcontainer img {
         width: 275px;
+        grid-area: 1/1;
+        grid-row: 1/3;
     }
 
     .resultcontainer ul {
-        align-self: flex-end
-    }
-
-    .resultcontainer ul {
-        align-self: auto;
+        align-self: center;
+        font-size: larger;
+        grid-area: 2/1;
+        grid-row: 2/3;
     }
 
     .resultcontainer ul li {
@@ -951,6 +966,16 @@ footer {
 
     .resultcontainer figure table {
         background-color: unset;
+    }
+
+    .resultcontainer p {
+        grid-column: 2/4;
+        grid-row: 1 span;
+    }
+
+    .resultcontainer>p:nth-child(4) {
+        font-size: 24px;
+        font-weight: 500;
     }
 
     .title {
@@ -963,8 +988,9 @@ footer {
 
     #tracklist {
         padding: unset;
-        grid-row: 1/4;
-        grid-column: 3;
+        grid-row: 3/7;
+        grid-column: 1;
+        justify-self: baseline;
     }
 
     #tracklist table {
@@ -1145,7 +1171,9 @@ footer {
 
 @media (min-width: 1025px) {
 
-    body {}
+    #header {
+        padding-bottom: unset;
+    }
 
     #main {
         max-width: 1145px;
@@ -1153,6 +1181,7 @@ footer {
 
     h1 {
         font-size: 8vw;
+        padding-left: 2rem;
     }
 
     #hero h1 {
@@ -1227,7 +1256,7 @@ footer {
     }
 
     .allPosts .album .resultcard {
-        width: 15rem;
+        width: 100%;
         max-height: 420px;
         padding: .5vw;
     }
@@ -1237,12 +1266,13 @@ footer {
     }
 
     .allPosts .album h2 {
-        font-size: 2vw;
+        font-size: 1.8vw;
     }
 
     .allPosts .album img {
         width: 12rem;
     }
+
 
     .title h2 {
         font-size: 8vw;
@@ -1259,11 +1289,6 @@ footer {
 
     .resultcontainer ul {
         padding: 0 20px;
-    }
-
-    #tracklist {
-        align-self: baseline;
-        justify-self: end;
     }
 
     #backbutton {

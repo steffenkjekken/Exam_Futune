@@ -1,3 +1,4 @@
+
 document.getElementById("hamburger-menu").checked = false;
 
 function pushDown(e) {
@@ -27,12 +28,15 @@ const result = document.querySelector(".album");
 
 function listPosts(tasks) {
     let myList = "";
+    let yearObject = ""
 
     for (let task of tasks) {
-        //console.log()
+        let albumInfo = task._embedded["wp:term"][1];
+        yearObject = albumInfo.map(x => x.name);
         myList += `<div class="resultcard"><a href="specific.html?id=${task.id}">
+            <p class="year">${yearObject}</p>
             <h2>${task.title.rendered}</h2>
-            <img src="${task._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url}" alt="#">
+            <img src="${task._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url}" alt = "#" >
             </a ></div >
         `
     }
@@ -75,7 +79,7 @@ function onArrowClick(arrow) {
     let album = document.querySelector(".album")
     let slideNumber = getComputedStyle(album).getPropertyValue("--slider-index")
 
-    postCount.innerHTML = `<p>Showing page ${++slideNumber} of 4 </p>`;
+    postCount.innerHTML = `<p> Showing page ${++slideNumber} of 4 </p> `;
 
 
 
