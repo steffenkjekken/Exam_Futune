@@ -896,6 +896,7 @@ footer {
         transform: scale(1.5, 1);
         font-size: 22px;
         font-weight: 900;
+        display: inline-block;
     }
 
     .arrow .text:hover {
