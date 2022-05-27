@@ -1,17 +1,20 @@
 @font-face {
     font-family: "Manrope";
     src: url(fonts/Manrope[wght].ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Satoshi";
     src: url(fonts/Satoshi-Variable.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Satoshi";
     font-style: italic;
     src: url(fonts/Satoshi-VariableItalic.ttf);
+    font-display: swap;
 }
 
 body {
