@@ -187,7 +187,7 @@ h1 {
     justify-content: flex-end;
 }
 
-.resultcard h2 {
+.resultcard h3 {
     margin: 0;
     font-family: "Manrope", sans-serif;
     font-size: 1.4rem;
@@ -226,7 +226,7 @@ h1 {
     margin: auto;
 }
 
-#main p.main {
+#main h2 {
     font-family: "Satoshi";
     font-style: italic;
     font-weight: bold;
@@ -300,12 +300,6 @@ footer {
 .imgContainer {
     display: flex;
     justify-content: center;
-}
-
-.title h2 {
-    font-family: "Manrope", sans-serif;
-    font-size: 2rem;
-    padding: 10px 0 0 5px;
 }
 
 .resultcontainer {
@@ -469,7 +463,7 @@ footer {
     max-width: 250px;
 }
 
-.allPosts .resultcard h2 {
+.allPosts .resultcard h3 {
     font-size: 18px;
     grid-area: 2;
 }
@@ -679,7 +673,7 @@ footer {
         margin: 0 5rem;
     }
 
-    .allPosts .resultcard h2 {
+    .allPosts .resultcard h3 {
         font-size: 1.5rem;
     }
 
@@ -692,7 +686,7 @@ footer {
         height: 18rem;
     }
 
-    .resultcard h2 {
+    .resultcard h3 {
         font-size: 1rem;
     }
 
@@ -853,7 +847,7 @@ footer {
         max-width: calc(100%/4);
     }
 
-    .resultcard h2 {
+    .resultcard h3 {
 
         font-size: 1rem;
     }
@@ -944,7 +938,7 @@ footer {
     }
 
 
-    .allPosts .resultcard h2 {
+    .allPosts .resultcard h3 {
         font-size: 2vw;
         padding-top: 10px;
     }
@@ -988,10 +982,6 @@ footer {
 
     .title {
         padding-top: 25px;
-    }
-
-    .title h2 {
-        font-size: 6vw;
     }
 
     #tracklist {
@@ -1244,7 +1234,7 @@ footer {
         height: 380px;
     }
 
-    .resultcard h2 {
+    .resultcard h3 {
         font-size: 2vw;
     }
 
@@ -1282,18 +1272,12 @@ footer {
         max-height: 400px;
     }
 
-    .allPosts .album h2 {
+    .allPosts .album h3 {
         font-size: 1.8vw;
     }
 
     .allPosts .album img {
         width: 12rem;
-    }
-
-
-    .title h2 {
-        font-size: 8vw;
-        margin: 15px 0;
     }
 
     .imgContainer img {
