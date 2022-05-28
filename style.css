@@ -487,7 +487,20 @@ footer {
     animation: spin 1.2s steps(8, end) infinite;
 }
 
-
+button#loadMore {
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    font-size: large;
+    text-transform: uppercase;
+    margin: 50px auto;
+    padding: 15px 70px;
+    background-color: black;
+    color: #FFFCF5;
+    cursor: pointer;
+    display: block;
+    border: 1px solid black;
+    border-radius: 5px;
+    }
 
 @keyframes spin {
     0% {
@@ -586,6 +599,11 @@ footer {
     color: #f9f9f9;
     background-color: #000;
     cursor: pointer;
+}
+
+#formContainer>input:nth-child(6):hover {
+    color: black;
+    background-color: yellow;
 }
 
 #backbutton {
@@ -821,6 +839,15 @@ footer {
         height: 200px;
     }
 
+    button#loadMore {
+        border-radius: 50px;
+        }
+
+    button#loadMore:hover {
+        color: black;
+        background-color: yellow;
+    }
+
     .carousel {
         display: flex;
         flex-direction: column;
@@ -897,7 +924,7 @@ footer {
 
     .arrow .text:hover {
         background-color: #000;
-        color: #FFFCF5;
+        color: yellow;
     }
 
     .pageCount p {

@@ -80,7 +80,11 @@ function onArrowClick(arrow) {
     let slideNumber = getComputedStyle(album).getPropertyValue("--slider-index")
 
     postCount.innerHTML = `<p> Showing page ${++slideNumber} of 4 </p> `;
-
-
-
 }
+
+const loadMoreBtn =document.getElementById("loadMore");
+const resultcontainer = document.querySelector(".resultcard:nth-child(n + 9)");
+
+loadMoreBtn.addEventListener ("click", ()=>{
+    resultcontainer.style.display = "block";
+});
