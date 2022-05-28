@@ -979,19 +979,14 @@ button#loadMore {
 
     .resultcontainer img {
         width: 275px;
-        grid-area: 1/1;
-        grid-row: 1/3;
+        grid-area: 1/1/2/2;
     }
 
     .resultcontainer ul {
         align-self: center;
-        font-size: larger;
-        grid-area: 2/1;
-        grid-row: 2/3;
-    }
-
-    .resultcontainer ul li {
-        padding: 10px 0;
+        font-size:medium;
+        grid-area: 2/1/3/2;
+        padding: 25px 5px;
     }
 
     .resultcontainer figure table {
@@ -1006,7 +1001,12 @@ button#loadMore {
     .resultcontainer>p:nth-child(4) {
         font-size: 24px;
         font-weight: 500;
+        grid-area: 1 / 2 / 2 / 4;
     }
+
+    .resultcontainer > p:nth-child(5) {
+        grid-area: 2 /2 / 6 / 4;
+        }
 
     .title {
         padding-top: 25px;
@@ -1014,9 +1014,9 @@ button#loadMore {
 
     #tracklist {
         padding: unset;
-        grid-row: 3/7;
-        grid-column: 1;
+        grid-area: 3 / 1 / 4 / 2;
         justify-self: baseline;
+        width: fit-content;
     }
 
     #tracklist table {
@@ -1024,7 +1024,7 @@ button#loadMore {
         position: relative;
         top: unset;
         right: unset;
-        grid-area: 1/3;
+        width: 100%;
     }
 
     .clickme {
@@ -1312,13 +1312,6 @@ button#loadMore {
         width: 350px;
     }
 
-    .imgContainer {
-        grid-area: 1/1;
-    }
-
-    .resultcontainer ul {
-        padding: 0 20px;
-    }
 
     #backbutton {
         border-radius: 50px;

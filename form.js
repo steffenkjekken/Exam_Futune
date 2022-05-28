@@ -29,7 +29,7 @@ function validateForm() {
     var validSubject = true;
     var validMessage = true;
 
-    if (name == "") {
+    if (name.length <= 5) {
         var noName = "Please fill out name!";
         nameErrorElement.innerHTML = noName;
         validName = false;
@@ -49,7 +49,7 @@ function validateForm() {
         validEmail = true;
     }
 
-    if (subject.length <= 10) {
+    if (subject.length <= 15) {
         var noSubject = "Subject must have a length of minimum 10 characters";
         subjectErrorElement.innerHTML = noSubject;
         validSubject = false;
