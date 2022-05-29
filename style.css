@@ -191,8 +191,8 @@ h1 {
 .resultcard h3 {
     margin: 0;
     font-family: "Manrope", sans-serif;
-    font-size: 1.4rem;
-    padding-top: 20px;
+    font-size: 1.3rem;
+    padding-top: 15px;
 }
 
 .resultcard ul {
@@ -229,7 +229,7 @@ h1 {
 }
 
 #main h2 {
-    font-family: "Satoshi";
+    font-family: "Satoshi", Arial, Helvetica, sans-serif;
     font-style: italic;
     font-weight: 700; !important;
     font-size: 2.6rem;
@@ -248,7 +248,7 @@ h1 {
 
 .about p,
 #main p {
-    font-family: "Satoshi";
+    font-family: "Satoshi", Arial, Helvetica, sans-serif;
     white-space: pre-line;
     padding: 0px 15px;
 }
@@ -278,7 +278,7 @@ footer {
 }
 
 #nav-footer nav ul li {
-    font-family: "Satoshi";
+    font-family: "Satoshi", Arial, Helvetica, sans-serif;
     font-size: 1.2rem;
     padding: 0 0 15px 0;
     color: #FFFCF5;
@@ -395,7 +395,7 @@ footer {
     text-align: end;
     border-spacing: 0;
     font-size: 0.8em;
-    font-family: "Satoshi", sans-serif;
+    font-family: "Satoshi", Arial, Helvetica, sans-serif;
 
 }
 
@@ -558,7 +558,7 @@ button#loadMore {
 }
 
 #contact {
-    font-family: "Satoshi", sans-serif;
+    font-family: "Satoshi", Arial, Helvetica, sans-serif;
     font-size: 4vw;
     font-weight: bold;
 }
@@ -580,7 +580,7 @@ button#loadMore {
 #message {
     width: 100%;
     height: 200px;
-    font-family: "Satoshi", sans-serif;
+    font-family: "Satoshi", Arial, Helvetica, sans-serif;
     border: 1px solid black;
     border-radius: 5px;
     resize: none;
@@ -691,7 +691,9 @@ button#loadMore {
 
     .allPosts .album {
         grid-template-columns: 1fr 1fr;
-        margin: 0 5rem;
+        grid-row-gap: 25px;
+        max-width: 650px;
+        margin: auto;
     }
 
     .allPosts .resultcard h3 {
@@ -898,10 +900,12 @@ button#loadMore {
         background-color: yellow;
     }
 
-    .album.resultcard p.year {
+    .carousel .album .resultcard a p.year {
         position: absolute;
-        bottom: 0;
+        margin-left: -15px;
+        bottom: 15px;
     }
+    
 
     .button {
         display: flex;
@@ -934,7 +938,7 @@ button#loadMore {
     }
 
     .pageCount p {
-        font-family: "Satoshi", sans-serif;
+        font-family: "Satoshi", Arial, Helvetica, sans-serif;
         font-size: 16px;
         font-style: italic;
         font-weight: 500
@@ -955,11 +959,17 @@ button#loadMore {
     .allPosts .album {
         grid-template-columns: 1fr 1fr 1fr;
         margin: unset;
+        max-width: unset;
     }
 
     .allPosts .album .resultcard a {
         width: auto;
         height: 25rem;
+    }
+    
+    .allPosts.album.resultcard p.year {
+        position: absolute;
+        bottom: 0;
     }
 
     .allPosts .album .resultcard a:hover {
@@ -984,7 +994,7 @@ button#loadMore {
 
 
     .resultcontainer img {
-        width: 275px;
+        width: 100%;
         grid-area: 1/1/2/2;
     }
 
@@ -1006,12 +1016,12 @@ button#loadMore {
     .resultcontainer p {
         grid-column: 2/4;
         grid-row: 1 span;
+        margin: 0;
     }
 
     .resultcontainer>p:nth-child(4) {
         font-size: 24px;
         font-weight: 800;
-        align-self: center;
         grid-area: 1 / 2 / 2 / 4;
     }
 
@@ -1232,6 +1242,7 @@ button#loadMore {
     h1 {
         font-size: 8vw;
         padding-left: 2rem;
+        line-height: 100%;
     }
 
     #hero h1 {
@@ -1258,7 +1269,6 @@ button#loadMore {
     .headertext {
         font-size: 14px;
         font-weight: 300;
-        align-self: first baseline;
     }
 
     #desktop ul li {
@@ -1322,6 +1332,13 @@ button#loadMore {
 
     .allPosts .album img {
         width: 12rem;
+    }
+
+    .resultcontainer>p:nth-child(4) {
+        font-size: 24px;
+        font-weight: 800;
+        align-self: center;
+        grid-area: 1 / 2 / 2 / 4;
     }
 
     .imgContainer img {
