@@ -894,6 +894,10 @@ button#loadMore {
         height: auto;
     }
 
+    .resultcard a:hover {
+        background-color: yellow;
+    }
+
     .album.resultcard p.year {
         position: absolute;
         bottom: 0;
