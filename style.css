@@ -865,6 +865,7 @@ button#loadMore {
         flex-grow: 1;
         transform: translate(calc(var(--slider-index)* -100%));
         transition: transform 250ms ease-in-out;
+        overflow-y: unset;
 
     }
 
