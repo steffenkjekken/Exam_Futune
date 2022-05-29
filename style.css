@@ -348,7 +348,7 @@ footer {
 }
 
 .resultcontainer li::first-line {
-    font-weight: 600;!important;
+    font-weight: 600; !important;
 }
 
 .modalImg {
