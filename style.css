@@ -282,7 +282,7 @@ footer {
 #nav-footer nav ul li {
     font-family: "Satoshi";
     font-size: 1.2rem;
-    padding: 0 0 35px 0;
+    padding: 0 0 15px 0;
     color: #FFFCF5;
 }
 
@@ -1007,7 +1007,8 @@ button#loadMore {
 
     .resultcontainer>p:nth-child(4) {
         font-size: 24px;
-        font-weight: 500;
+        font-weight: 800;
+        align-self: center;
         grid-area: 1 / 2 / 2 / 4;
     }
 
@@ -1182,9 +1183,7 @@ button#loadMore {
     }
 
     #nav-footer nav {
-        justify-content: end;
-        justify-self: end;
-        text-align: end;
+       padding-left: 25px;
     }
 
     #nav-footer img {
