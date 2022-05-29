@@ -233,7 +233,7 @@ h1 {
 #main h2 {
     font-family: "Satoshi";
     font-style: italic;
-    font-weight: 700;
+    font-weight: 700; !important;
     font-size: 2.6rem;
     margin: 0;
 }
@@ -348,7 +348,7 @@ footer {
 }
 
 .resultcontainer li::first-line {
-    font-weight: 600;
+    font-weight: 600;!important;
 }
 
 .modalImg {
@@ -1165,7 +1165,7 @@ button#loadMore {
     .footertext p.futune {
         font-size: 85px;
         font-family: "Manrope", sans-serif;
-        font-weight: 400;
+        font-weight: 400; !important;
         font-style: normal;
         letter-spacing: 16px;
         color: #FFFCF5;
