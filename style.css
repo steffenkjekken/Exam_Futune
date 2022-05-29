@@ -1,12 +1,13 @@
 @font-face {
     font-family: "Manrope";
-    font-weight: 100-900;
+    font-weight: normal;
     src: url(fonts/Manrope[wght].ttf);
     font-display: swap;
 }
 
 @font-face {
     font-family: "Satoshi";
+    font-weight: normal;
     src: url(fonts/Satoshi-Variable.ttf);
     font-display: swap;
 }
@@ -14,6 +15,7 @@
 @font-face {
     font-family: "Satoshi";
     font-style: italic;
+    font-weight: normal;
     src: url(fonts/Satoshi-VariableItalic.ttf);
     font-display: swap;
 }
