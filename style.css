@@ -1183,7 +1183,12 @@ button#loadMore {
     }
 
     #nav-footer nav {
-       padding-left: 25px;
+       padding-left: 90px;
+       padding-top: 30px;
+    }
+
+    #nav-footer ul {
+        padding: unset;
     }
 
     #nav-footer img {
