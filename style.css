@@ -218,6 +218,7 @@ h1 {
 .album {
     flex-direction: row;
     display: flex;
+    overflow-y: hidden;
 }
 
 .button {
