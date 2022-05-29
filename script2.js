@@ -56,7 +56,7 @@ function displayPost(data) {
 
     trackDiv.innerHTML = `<p>Tracklist</p><i class="fa-solid fa-angle-down"></i>`;
 
-    trackList.append(trackDiv);
+    trackList.prepend(trackDiv);
 
     trackDiv.addEventListener("click", function (e) {
         if (trackTable.style.display === "block") {
