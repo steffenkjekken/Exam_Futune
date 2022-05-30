@@ -136,6 +136,7 @@ h1 {
     font-size: 12vw;
     margin: 0;
     padding: 10px 20px;
+    line-height: 100%;
 }
 
 #hero h1:nth-child(1) {
@@ -415,6 +416,10 @@ footer {
     padding: 5px 0;
 }
 
+#tracklist > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) {
+    width: 100%;
+    }
+
 #tracklist table tr:last-child td {
     border-bottom: none;
 }
@@ -688,6 +693,14 @@ button#loadMore {
         align-self: center;
         margin-top: 4rem;
     }
+
+    #tracklist > table:nth-child(2) {
+        width: auto;
+        }
+
+    #tracklist > table:nth-child(2) > tbody:nth-child(1) {
+        width: max-content;
+        }
 
     .clickme {
         width: 12rem;
@@ -1041,7 +1054,7 @@ button#loadMore {
         padding: unset;
         grid-area: 3 / 1 / 4 / 2;
         justify-self: baseline;
-        width: fit-content;
+        width: 100%;
     }
 
     #tracklist table {
@@ -1049,9 +1062,13 @@ button#loadMore {
         position: relative;
         top: unset;
         right: unset;
-        width: 100%;
+        width: fit-content;
         margin: unset;
     }
+
+    #tracklist > table:nth-child(2) {
+        width: 100%;
+        }
 
     .clickme {
         display: none;
@@ -1200,7 +1217,7 @@ button#loadMore {
     }
 
     #nav-footer nav {
-       padding-left: 90px;
+       padding-left: 20%;
        padding-top: 30px;
     }
 
@@ -1246,7 +1263,6 @@ button#loadMore {
     h1 {
         font-size: 8vw;
         padding-left: 2rem;
-        line-height: 100%;
     }
 
     #hero h1 {
