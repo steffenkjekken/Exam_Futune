@@ -47,7 +47,7 @@ function displayPost(data) {
 
     resultcontainer.innerHTML = content;
     albumTitle.innerHTML = titleName;
-    document.title = title;
+    document.title = `Futune | ${title}`;
 
     const trackList = document.getElementById("tracklist");
     let trackDiv = document.createElement("div");
