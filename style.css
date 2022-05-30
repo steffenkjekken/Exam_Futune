@@ -253,6 +253,17 @@ h1 {
     padding: 0px 15px;
 }
 
+.about>p:nth-child(2) {
+    align-self: center;
+    font-weight:700;
+    font-size: larger;
+    font-style: italic;
+}
+
+.about p.attribution {
+    font-size: 12px;
+}
+
 footer {
     border-top: 1px solid #000;
     background-color: rgba(0, 0, 0, 0.891);
@@ -633,19 +644,12 @@ button#loadMore {
     .about {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 0.5fr 1fr;
     }
 
     .about>picture {
         grid-area: 1/1;
     }
 
-    .about>p:nth-child(2) {
-        align-self: center;
-        font-weight:700;
-        font-size: larger;
-        font-style: italic;
-    }
 
     .about>p:nth-child(3) {
         grid-row-start: 2;
